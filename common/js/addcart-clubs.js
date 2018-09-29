@@ -25,14 +25,14 @@ $(".addToCart-clubs").click(function() {
         var isThis = $(this);
         var id_pro = isThis.attr('data-id');
         var sku = isThis.attr('data-sku');
-        var name_pro = isThis.attr('data-title');
+        var name = isThis.attr('data-title');
+        var name_pro = name.replace('#', '');
         var price_pro = parseInt(isThis.attr('data-price'));
         var quantity = parseInt($("#quantity").val());
         var tcost = quantity * price_pro;
         var shaft = $("input[name=shaftChose]:checked").val();
         var flex = $("input[name=flexChose]:checked").val();
         var loft = $("input[name=loftChose]:checked").val();
-        alert(shaft);
         //TOTAL CART
         isThis.html('<i class="fa fa-spinner fa-spin"></i> Loading...');
         setTimeout(function() {
@@ -45,7 +45,7 @@ $(".addToCart-clubs").click(function() {
         }, 500);
         $.ajax({
             data: {},
-            url: '/ajax/create_json.php?proid=' + id_pro + '&qual=' + quantity + '&price=' + price_pro + '&cost=' + tcost + '&name_pro=' + name_pro + '&sku=' + sku + '&flex=' + flex + '&shaft=' + shaft + '&loft=' + loft,
+            url: '/ajax/create_json.php?proid=' + id_pro + '&qual=' + quantity + '&price=' + price_pro + '&cost=' + tcost + '&sku=' + sku + '&flex=' + flex + '&shaft=' + shaft + '&loft=' + loft,
             type: 'GET',
             success: function(data) {
                 var start = readCookie('incart');
@@ -53,4 +53,4 @@ $(".addToCart-clubs").click(function() {
             }
         })
     }
-});
+})

@@ -82,9 +82,6 @@ $('.closeSearch').click(function() {
 
 $('#pageTop').click(function() { $('body,html').animate({ scrollTop: 0 }, 500); });
 
-$(window).ready(function() {
-    $(".gNavi").droppy();
-});
 
 /*=====================================================
 meta: {

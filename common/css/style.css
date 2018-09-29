@@ -249,10 +249,25 @@
 }
 
 .infoPro--price {
-    font-size: 2vw;
+    font-size: 24px;
     color: #ff5534;
     font-weight: 700;
     margin-bottom: 0px;
+}
+
+.infoPro--price span {
+    display: inline-block;
+    background: #ff5534;
+    padding: 5px 10px;
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.infoPro--saleoff {
+    font-size: 18px;
+    color: #333;
+    text-decoration-line: line-through;
 }
 
 .infoPro--sku {
@@ -458,6 +473,12 @@
 .lstCart li .info table {
     font-size: 14px;
     width: 100%;
+}
+
+.lstCart li .info table span {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
 }
 
 .lstCart li .name {

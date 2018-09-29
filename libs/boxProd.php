@@ -6,10 +6,9 @@ var availableTags = [
 $wp_query = new WP_Query();
 $param = array (
 'posts_per_page' => '-1',
-'post_type' => array('accessories','bag','shoes','clubs'),
+'post_type' => array('accessories','bag','shoes','clubs','apparel'),
 'post_status' => 'publish',
 'order' => 'DESC',
-'paged' => $paged,
 );
 $wp_query->query($param);
 if($wp_query->have_posts()): while($wp_query->have_posts()) :$wp_query->the_post();

@@ -21,9 +21,9 @@
     <div class="headerInner flexBox flexBox--between flexBox--center flexBox--wrap">
     <p id="logo"><a href="<?php echo APP_URL; ?>"><img src="<?php echo APP_URL ?>common/img/header/logo.svg"></a></p>
     <div class="rightHead flexBox flexBox--center flexBox--between">
-        <form class="formSearch">
+        <form class="formSearch" action="<?php echo APP_URL; ?>wp/search/">
             <div class="wrapSearch">
-                <input type="text" name="search" placeholder="Search item...">
+                <input type="text" id="tags" name="search" placeholder="Search item...">
                 <button type="submit" class="submitBtn"><img src="<?php echo APP_URL ?>common/img/header/icon_loop@w.svg"></button>
             </div>
         </form>

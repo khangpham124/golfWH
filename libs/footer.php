@@ -36,28 +36,12 @@
 <script type="text/javascript" src="<?php echo APP_URL; ?>common/js/jquery-scrolltofixed.js"></script>
 <script type="text/javascript" src="<?php echo APP_URL; ?>common/js/jquery.matchHeight.min.js"></script>
 <script type="text/javascript" src="<?php echo APP_URL; ?>common/js/biggerlink.js"></script>
-<script src="<?php echo APP_URL; ?>common/js/jquery.droppy.js"></script>
 <script type="text/javascript">
     $(function(){
         $('.matchHeight').matchHeight();
         $('.biggerlink').biggerlink();
         
     });
-</script>
-
-
-<script src="<?php echo APP_URL; ?>common/js/wow.js"></script>
-<script>
-    wow = new WOW(
-      {
-        animateClass: 'animated',
-        offset:       100,
-        callback:     function(box) {
-          console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
-        }
-      }
-    );
-    wow.init();
 </script>
 <script>
     var forEach=function(t,o,r){if("[object Object]"===Object.prototype.toString.call(t))for(var c in t)Object.prototype.hasOwnProperty.call(t,c)&&o.call(r,t[c],c,t);else for(var e=0,l=t.length;l>e;e++)o.call(r,t[e],e,t)};
@@ -70,11 +54,4 @@
       });
     }
 </script>
-<script type="text/javascript">
-	$(window).ready(function() {
-		$(".gNavi").droppy();
-	});
-	$(window).scroll(function() {
-		$(".gNavi").droppy();
-	});
-</script><!-- container -->
+<?php include(APP_PATH."libs/boxProd.php"); ?>
