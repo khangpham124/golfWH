@@ -25,7 +25,9 @@
         ?>
         <li>
             <div class="wrap">
+                <?php if($thumb_img[0]) { ?>
                 <p class="thumb"><img src="<?php echo thumbCrop($thumb_img[0],300,300); ?>" class="" alt=""></p>
+                <?php } ?>
                 <p class="title"><a href=""><?php the_title(); ?></a></p>
         <p class="price <?php echo $classSale; ?>"><?php echo number_format($price_real); ?> VND 
         <?php if($sale_stt!='') { ?>

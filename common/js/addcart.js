@@ -28,6 +28,9 @@ $(".addToCard").live('click', function() {
         var tcost = quantity * price_pro;
         var getCL = $("input[name=colorChose]:checked").val();
         var size = $("input[name=sizeChose]:checked").val();
+        var shaft = $("input[name=shaftChose]:checked").val();
+        var flex = $("input[name=flexChose]:checked").val();
+        var loft = $("input[name=loftChose]:checked").val();
         var color = getCL.replace('#', '');
         //TOTAL CART
         isThis.html('<i class="fa fa-spinner fa-spin"></i> Loading...');
@@ -41,7 +44,7 @@ $(".addToCard").live('click', function() {
         }, 500);
         $.ajax({
             data: {},
-            url: '/ajax/create_json.php?proid=' + id_pro + '&qual=' + quantity + '&price=' + price_pro + '&cost=' + tcost + '&name_pro=' + name_pro + '&size=' + size + '&color=' + color + '&sku=' + sku,
+            url: '/ajax/create_json.php?proid=' + id_pro + '&qual=' + quantity + '&price=' + price_pro + '&cost=' + tcost + '&name_pro=' + name_pro + '&size=' + size + '&color=' + color + '&sku=' + sku + '&flex=' + flex + '&shaft=' + shaft + '&loft=' + loft,
             type: 'GET',
             success: function(data) {
                 var start = readCookie('incart');

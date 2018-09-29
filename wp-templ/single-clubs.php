@@ -90,26 +90,26 @@ include(APP_PATH."libs/head.php");
 						?>
 						<?php if(get_sub_field('shaft')) { ?>
 						<p class="txtTech">Shaft</p>
-						<div class="sizePart choseWrap">	
+						<div class="sizePart choseWrap shaftPart">	
 							<?php while(has_sub_field('shaft')): ?>	
-							<p class="wrapRad <?php if($quan==0) { ?>soldOut<?php } ?>"><input type="radio" name="sizeChose" id="sizeChose" class="radChose" value="<?php echo get_sub_field('info') ?>"><?php echo get_sub_field('info') ?></p>	
+							<p class="wrapRad <?php if($quan==0) { ?>soldOut<?php } ?>"><input type="radio" name="shaftChose" id="shaftChose" class="radChose" value="<?php echo get_sub_field('info') ?>"><?php echo get_sub_field('info') ?></p>	
 							<?php endwhile; ?>
 						</div>
 						<?php } ?>
 						<?php if(get_sub_field('flex')) { ?>
 						<p class="txtTech">Flex</p>
-						<div class="sizePart choseWrap">
+						<div class="sizePart choseWrap flexPart">
 						<?php while(has_sub_field('flex')): ?>	
-						<p class="wrapRad <?php if($quan==0) { ?>soldOut<?php } ?>"><input type="radio" name="sizeChose" id="sizeChose" class="radChose" value="<?php echo get_sub_field('info') ?>"><?php echo get_sub_field('info') ?></p>		
+						<p class="wrapRad <?php if($quan==0) { ?>soldOut<?php } ?>"><input type="radio" name="flexChose" id="flexChose" class="radChose" value="<?php echo get_sub_field('info') ?>"><?php echo get_sub_field('info') ?></p>		
 						<?php endwhile; ?>
 						</div>
 						<?php } ?>
 						
 						<?php if(get_sub_field('loft')) { ?>
 						<p class="txtTech">Loft</p>
-						<div class="sizePart choseWrap">
+						<div class="sizePart choseWrap loftPart">
 						<?php while(has_sub_field('loft')): ?>	
-						<p class="wrapRad <?php if($quan==0) { ?>soldOut<?php } ?>"><input type="radio" name="sizeChose" id="sizeChose" class="radChose" value="<?php echo get_sub_field('info') ?>"><?php echo get_sub_field('info') ?></p>		
+						<p class="wrapRad <?php if($quan==0) { ?>soldOut<?php } ?>"><input type="radio" name="loftChose" id="loftChose" class="radChose" value="<?php echo get_sub_field('info') ?>"><?php echo get_sub_field('info') ?></p>		
 						<?php endwhile; ?>
 						</div>
 						<?php } ?>
@@ -124,7 +124,7 @@ include(APP_PATH."libs/head.php");
 						<input type="text" id="quantity" class="input_cal" readonly  value="1"> 
 					</div>
 					<?php if($price_real != 0) {?>
-						<a href="javascript:void(0)" class="infoPro--btn addToCard" data-id="<?php echo $post->ID; ?>" data-price="<?php echo $price; ?>" data-title="<?php echo $post->post_title; ?>" data-sku="<?php echo get_field('cf_sku'); ?>">ADD TO CART</a>
+						<a href="javascript:void(0)" class="infoPro--btn addToCart-clubs" data-id="<?php echo $post->ID; ?>" data-price="<?php echo $price; ?>" data-title="<?php echo $post->post_title; ?>" data-sku="<?php echo get_field('cf_sku'); ?>">ADD TO CART</a>
 					<?php } else { ?>
 						<a href="tel:<?php echo $hotline; ?>" class="infoPro--btn"><i class="fa fa-phone" aria-hidden="true"></i>CALL</a>	
 					<?php } ?>	
@@ -170,8 +170,6 @@ include(APP_PATH."libs/head.php");
 	<?php include(APP_PATH."libs/related_products.php"); ?>
 </div>	
 
-
-
 <!--Footer-->
 <?php include(APP_PATH."libs/footer.php"); ?>
 <!--/Footer-->
@@ -179,6 +177,7 @@ include(APP_PATH."libs/head.php");
 </div>
 <!--/wrapper-->
 <!--===================================================-->
+<script type="text/javascript" src="<?php echo APP_URL; ?>common/js/addcart-clubs.js"></script>
 <script src="<?php echo APP_URL; ?>common/js/slick.js"></script>
 <script>
 $(function(){
@@ -195,8 +194,7 @@ $(function(){
 			}
 		}
 		$button.parent().find("input").val(newVal);
-	});	
-
+	});
 	$('.chosecolor1').addClass('active');
 	$(".wrapColor").click(function() {
 		var idCL = $(this).attr('data-color');

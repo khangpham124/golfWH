@@ -24,6 +24,9 @@ if(!isset($_COOKIE['order_gwh'])) {
         "quantity"=>$_GET['qual'],
         "size"=>$_GET['size'],
         "color"=>$_GET['color'],
+        "shaft"=>$_GET['shaft'],
+        "flex"=>$_GET['flex'],
+        "loft"=>$_GET['loft'],
         "price"=>$_GET['price'],
         "cost"=>$_GET['cost'],
         )
@@ -56,6 +59,9 @@ if(!isset($_COOKIE['order_gwh'])) {
         "size"=>$_GET['size'],
         "price"=>$_GET['price'],
         "color"=>$_GET['color'],
+        "shaft"=>$_GET['shaft'],
+        "flex"=>$_GET['flex'],
+        "loft"=>$_GET['loft'],
         "price"=>$_GET['price'],
         "cost"=>$_GET['cost'],
     );

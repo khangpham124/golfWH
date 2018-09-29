@@ -20,7 +20,7 @@ include(APP_PATH."libs/head.php");
 
 <div class="maxW">
 	<ul class="break clearfix">
-		<li><a href="">Home</a></li>
+		<li><a href="<?php echo APP_URL; ?>">Home</a></li>
 		<li>Cart</li>
 	</ul>
 	<?php 
@@ -70,18 +70,39 @@ include(APP_PATH."libs/head.php");
 							<p class="name"><a href="<?php the_permalink(); ?>"><?php echo $post->post_title; ?></a></p>
 							<table>
 								<tr>
-									<th>SIZE</th>
-									<td><?php echo $mydata->size; ?></td>
-								</tr>
-								<tr>
 									<th>SKU</th>
 									<td><?php the_field('cf_sku'); ?></td>
 								</tr>
-								
+								<?php if($mydata->size!='') { ?>
+								<tr>
+									<th>SIZE</th>
+									<td><?php echo $mydata->size; ?></td>
+								</tr>
+								<?php } ?>
+								<?php if($mydata->color!='') { ?>
 								<tr>
 									<th>COLOUR</th>
 									<td><span style="background:#<?php echo $mydata->color ?>"></span></td>
 								</tr>
+								<?php } ?>
+								<?php if($mydata->shaft!='') { ?>
+								<tr>
+									<th>SHAFT</th>
+									<td><?php echo $mydata->shaft ?></td>
+								</tr>
+								<?php } ?>
+								<?php if($mydata->flex!='') { ?>
+								<tr>
+									<th>FLEX</th>
+									<td><?php echo $mydata->flex ?></td>
+								</tr>
+								<?php } ?>
+								<?php if($mydata->loft!='') { ?>
+								<tr>
+									<th>LOFT</th>
+									<td><?php echo $mydata->loft ?></td>
+								</tr>
+								<?php } ?>		
 								<tr>
 									<th>QTY</th>
 									<td class="qtyNumb"><?php echo $mydata->quantity; ?></td>
