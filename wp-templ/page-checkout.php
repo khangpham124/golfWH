@@ -1,6 +1,10 @@
 <?php
 session_start();
 include($_SERVER["DOCUMENT_ROOT"] . "/app_config.php");
+if(!$_COOKIE['order_cookies']) {    
+    header('Location:http://golf-warehouse.vn');
+    die();
+}
 include(APP_PATH."libs/head.php"); 
 ?>
 <link rel="stylesheet" href="<?php echo APP_URL;?>common/css/slick.css">
@@ -17,7 +21,7 @@ include(APP_PATH."libs/head.php");
 
 <div class="maxW">
 	<ul class="break clearfix">
-		<li><a href="">Home</a></li>
+		<li><a href="<?php echo APP_URL; ?>">Home</a></li>
 		<li>Checkout</li>
 	</ul>
 	<?php 

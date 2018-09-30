@@ -563,3 +563,27 @@ function create_clubsgendercat_taxonomy () {
 	);
 	register_taxonomy('clubsgendercat','clubs',$args);
 }
+
+add_action( 'admin_menu', 'add_orders_menu_bubble' );
+function add_orders_menu_bubble() {
+  global $menu;
+  $orderStatus = get_posts(array(
+    'post_type' => 'getorder',
+    'posts_per_page' => -1,
+    'meta_query' => array(
+      array(
+        'key' => 'cf_order_status',
+        'value' => 'in progress',
+        'compare' => '=',
+      )
+    ),
+  ));
+  if ( count($orderStatus) ) {
+    foreach ( $menu as $key => $value ) {
+      if ( $menu[$key][2] == 'edit.php?post_type=getorder' ) {
+        $menu[$key][0] .= ' <span class="update-plugins count-1"><span class="plugin-count">' . count($orderStatus) . '</span></span>';
+        return;
+      }
+    }
+  }
+}
