@@ -34,7 +34,7 @@ include(APP_PATH."libs/head.php");
 			$thumb_url = get_post_thumbnail_id($post->ID);
 			$thumb_img = wp_get_attachment_image_src($thumb_url,'full');
 		?>
-		<li><a href=""><img src="<?php echo $thumb_img[0]; ?>" class="" alt="<?php the_title(); ?>"></a></li>
+		<li><a href="<?php echo APP_URL; ?>brand/?brand=<?php echo $post->post_name; ?>"><img src="<?php echo $thumb_img[0]; ?>" class="" alt="<?php the_title(); ?>"></a></li>
 		<?php endwhile;endif; ?>
 	</ul>
 </div>	

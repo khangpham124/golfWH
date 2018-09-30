@@ -18,6 +18,8 @@ switch ($pagename) {
 		$txtH1 = "H1 Default";
 }
 
-$hotline = '0938 813 271';
+$hotline = '0938-813-271';
+$address = '28A, đường số 12, kp2, P.Hiệp bình chánh, quận Thủ Đức, TpHCM';
+$hours = ' 8:00AM- 18:00 PM';
 
 ?>

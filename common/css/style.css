@@ -99,6 +99,29 @@
     margin-bottom: 15px;
 }
 
+.lstProTop li .price.saleoff em {
+    text-decoration-line: line-through;
+    color: #333;
+    font-size: 15px;
+    font-style: normal;
+}
+
+.lstProTop li .price.saleoff span {
+    display: inline-block;
+    background: #ff5534;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.lstProTop li .priceOff {
+    color: #ff5534;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
 .lstProTop--noSlide li {
     margin-bottom: 20px;
 }
@@ -152,6 +175,11 @@
 
 .lstLogo li {
     text-align: center;
+}
+
+.lstLogo li img {
+    height: 60px;
+    width: auto;
 }
 
 .head_Sub {

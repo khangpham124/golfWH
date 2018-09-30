@@ -77,7 +77,8 @@ include(APP_PATH."libs/head.php");
 					<div class="wrap">
 						<p class="thumb"><img src="<?php echo thumbCrop($thumb_img[0],230,230); ?>" class="" alt=""></p>
 						<p class="title"><a href=""><?php the_title(); ?></a></p>
-						<p class="price <?php echo $classSale; ?>"><?php echo number_format($price_real); ?> VND 
+						<p class="price <?php echo $classSale; ?>">
+							<em><?php echo number_format($price_real); ?> VND</em>
 						<?php if($sale_stt!='') { ?>
 						<span>-<?php echo get_field('cf_cost') ?>%</span>
 						<?php } ?>

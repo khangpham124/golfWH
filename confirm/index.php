@@ -95,12 +95,15 @@ include "class.smtp.php";
 		$mail->Password = "A@*#029!";
 		$from = "order.gwh@gmail.com";
 
-		$to=array("teddycoder421@gmail.com","khangpham421@gmail.com");
+		$to_admin = "khangpham421@gmail.com";
+		$to_customer = $email;
+
 		$name="GOLF-WAREHOUSE ORDER";
 
 		$mail->From = $from;
 		$mail->FromName = "GOLF-WAREHOUSE ORDER SYSTEM";
-		$mail->AddAddress($to,$name);
+		$mail->AddAddress($to_admin,$name);
+		$mail->AddAddress($to_customer,$name);
 
 		//$mail->AddReplyTo($from,"khang test");
 		$mail->WordWrap = 50;

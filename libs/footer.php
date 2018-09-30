@@ -1,5 +1,4 @@
-<p id="pageTop"><img src="<?php echo APP_URL; ?>common/img/footer/totop.svg" class="" alt=""></p>
-
+<!-- <p id="pageTop"><img src="<?php echo APP_URL; ?>common/img/footer/totop.svg" class="" alt=""></p> -->
 <footer id="footer">
     <div class="inner flexBox flexBox--wrap flexBox--between">
       <div class="logoFoot"><img src="<?php echo APP_URL ?>common/img/header/logo.svg" class="">
@@ -21,12 +20,13 @@
             <li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i><a href="">Shipping Info</a></li>
             <li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i><a href="">Faqs</a></li>
           </ul> -->
-          <p class="copyright">© 2018 <span>Golf-warehouse.vn</span>All Rights Reserved</p>   
+          <p class="copyright">© 2018 <span>Golf-Warehouse.vn</span>All Rights Reserved</p>   
         </div>
       </div>
     </div>
 </footer>
 
+<!-- Subiz --> <script> (function(s, u, b, i, z){ u[i]=u[i]||function(){ u[i].t=+new Date(); (u[i].q=u[i].q||[]).push(arguments); }; z=s.createElement('script'); var zz=s.getElementsByTagName('script')[0]; z.async=1; z.src=b; z.id='subiz-script'; zz.parentNode.insertBefore(z,zz); })(document, window, 'https://widgetv4.subiz.com/static/js/app.js', 'subiz'); subiz('setAccount', 'acqdcxxlfkhvhdrpvhwr'); </script> <!-- End Subiz -->
 
 <script src="<?php echo APP_URL; ?>common/js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="<?php echo APP_URL; ?>common/js/smoothscroll.js"></script>

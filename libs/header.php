@@ -6,7 +6,8 @@
     <div class="headBar">
         <div class="inner flexBox flexBox--center flexBox--between">
         <ul class="infoShop">
-            <li><i class="fa fa-envelope-o" aria-hidden="true"></i>email@mail.com</li>
+            <li><i class="fa fa-map-marker" aria-hidden="true"></i><?php echo $address; ?></li>
+            <li><i class="fa fa-clock-o" aria-hidden="true"></i><?php echo $hours; ?></li>
         </ul>
         <div class="right flexBox flexBox--center flexBox--between">
             <ul class="langBar">
@@ -31,7 +32,8 @@
     </div>
     
     <div class="sp">
-        <a href="" class="btnContact_sp"><img src="<?php echo APP_URL ?>common/img/header/btn_contact.jpg"></a>
+        <a href="tel:<?php echo $hotline; ?>" class="callSP"><i class="fa fa-phone" aria-hidden="true"></i></a>
+        <a href="<?php echo APP_URL; ?>cart/" class="linkCart"><i class="fa fa-shopping-bag" aria-hidden="true"></i>(<span class="numbCart">0</span>)</a>
         <button class="hamburger hamburger--collapse" type="button">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
@@ -217,15 +219,14 @@
         <li><a href="">Vietnamese</a></li>
     </ul> -->
     <ul class="menuList">
-        <li><a href="">NEW ARRIVAL</a></li>
-        <li><a href="">GOLF CLUBS </a></li>
-        <li><a href="">GOLF BAGS </a></li>
-        <li><a href="">GOLF SHOES </a></li>
-        <li><a href="">APPAREL </a></li>
-        <li><a href="">ACCESSORIES </a></li>
-        <li><a href="">CLEARANCE </a></li>
-        <li><a href="">SHOP BY BRAND </a></li>
-        <li><a href="">EVENT</a></li>
-        <li><a href="">SALE</a></li>
+        <li><a href="<?php echo APP_URL; ?>new-arrival/">NEW ARRIVAL</a></li>
+        <li><a href="<?php echo APP_URL; ?>sale/">SALE</a></li>
+        <li><a href="<?php echo APP_URL; ?>clubs/">GOLF CLUBS </a></li>
+        <li><a href="<?php echo APP_URL; ?>bag/">GOLF BAGS </a></li>
+        <li><a href="<?php echo APP_URL; ?>shoes/">GOLF SHOES </a></li>
+        <li><a href="<?php echo APP_URL; ?>apparel">APPAREL </a></li>
+        <li><a href="<?php echo APP_URL; ?>accessories">ACCESSORIES </a></li>
+        <li><a href="<?php echo APP_URL; ?>brand">SHOP BY BRAND </a></li>
+        <li><a href="<?php echo APP_URL; ?>event">EVENT</a></li>
     </ul>
 </div>

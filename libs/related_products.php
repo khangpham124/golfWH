@@ -29,10 +29,11 @@
                 <p class="thumb"><img src="<?php echo thumbCrop($thumb_img[0],300,300); ?>" class="" alt=""></p>
                 <?php } ?>
                 <p class="title"><a href=""><?php the_title(); ?></a></p>
-        <p class="price <?php echo $classSale; ?>"><?php echo number_format($price_real); ?> VND 
-        <?php if($sale_stt!='') { ?>
-        <span>-<?php echo get_field('cf_cost') ?>%</span>
-        <?php } ?>
+        <p class="price <?php echo $classSale; ?>">
+            <em><?php echo number_format($price_real); ?> VND</em>
+            <?php if($sale_stt!='') { ?>
+            <span>-<?php echo get_field('cf_cost') ?>%</span>
+            <?php } ?>
         </p>
         <?php if($sale_stt!='') { ?>
         <p class="priceOff"><?php echo number_format($price); ?> VND</p>
