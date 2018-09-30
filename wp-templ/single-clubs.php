@@ -1,5 +1,10 @@
 <?php
 include($_SERVER["DOCUMENT_ROOT"] . "/app_config.php");
+$titlepage = $post->post_title.' | Golf-WareHouse | Golf Shop - Gậy golf, Quần golf, Áo golf, Giầy golf, Mũ Golf';
+$desPage = get_the_excerpt();
+$thumb_url = get_post_thumbnail_id($post->ID);
+$thumb_img = wp_get_attachment_image_src($thumb_url,'full');
+$fb_img = $thumb_img[0];
 include(APP_PATH."libs/head.php"); 
 ?>
 <link rel="stylesheet" href="<?php echo APP_URL;?>common/css/slick.css">
@@ -116,7 +121,7 @@ include(APP_PATH."libs/head.php");
 						<?php endwhile; ?>
 						
 					</div>
-		
+					<?php include(APP_PATH."libs/boxShared.php"); ?>
 					<p class="infoPro--label">Quantity</p>
 					<div class="numbers-row clearfix">
 						<div class='inc button cal' rel='+' ><i class="fa fa-plus" aria-hidden="true"></i></div>

@@ -1,28 +1,45 @@
-<?php get_header(); ?>
-<title>--</title>
-<meta name="description" content="---" />
-<meta name="keywords" content="---" />
-<meta http-equiv="REFRESH" content="3; url=<?php echo esc_url( home_url( '/' ) )?>">
-<link rel="stylesheet" href="/common/css/import.css" type="text/css" media="all" />
-<link rel="icon" href="/common/img/icon/favicon.ico" type="image/vnd.microsoft.icon" />
+<?php /* Template Name: Sale */ ?>
+<?php
+include($_SERVER["DOCUMENT_ROOT"] . "/app_config.php");
+include(APP_PATH."libs/head.php"); 
+?>
+<link rel="stylesheet" href="<?php echo APP_URL;?>common/css/slick.css">
 </head>
-<body id="top">
-<?php include(TEMPLATEPATH . '/header2.php'); ?>
-<?php include(TEMPLATEPATH . '/gNavi.php'); ?>
-	<div id="container">
-		<!-- /container start -->		
-		<div class="clearfix">
-			<div id="mainContent">
-				<!-- /mainContent start -->
-				<p class="taC t30b30 fz15">アクセスしようとしたページは、移動したか削除されました。<br />下記リンクに移動して下さい。</p>
-				<p class="taC"><a href="<?php echo esc_url( home_url( '/' ) )?>"><?php echo esc_url( home_url( '/' ) )?></a></p>
-				<!-- /maincontent end -->
-			</div>
-			<?php get_sidebar(); ?>
-		</div>
-		<!-- /container end -->
-	</div>
-	<?php get_footer(); ?>
 
+<body id="category">
+<!--===================================================-->
+<div id="wrapper">
+<!--===================================================-->
+
+<!--Header-->
+<?php include(APP_PATH."libs/header.php"); ?>
+<!--/Header-->
+
+<!-- <div class="headSub">
+	<img src="<?php echo APP_URL; ?>img/top/banner.jpg" class="" alt="">
+</div> -->
+
+<div class="maxW">
+	<div class="taR">
+		<ul class="break clearfix">
+			<li><a href="<?php echo APP_URL; ?>">Home</a></li>
+			<li>404</li>
+		</ul>
+	</div>
+
+	<div class="clearfix">
+		<p class="txtNotfound">OOPS! PAGE NOT FOUND</p>
+	</div>
+</div>	
+
+
+
+<!--Footer-->
+<?php include(APP_PATH."libs/footer.php"); ?>
+<!--/Footer-->
+<!--===================================================-->
+</div>
+<!--/wrapper-->
+<!--===================================================-->
 </body>
-</html>
+</html>	

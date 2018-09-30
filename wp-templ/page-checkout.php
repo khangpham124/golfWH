@@ -32,7 +32,7 @@ include(APP_PATH."libs/head.php");
 	<div class="leftCart">
 		<div class="boxCart">
 			<h3 class="h3_checkout">SHIPPING INFO</h3>
-			<form class="formInput" method="post" action="<?php echo APP_URL; ?>confirm/">
+			<form class="formInput" method="post" action="http://golf-warehouse.vn/confirm/">
 				<table class="shipInfo">
 					<tr>
 						<th><label>Fullname</label></th>
