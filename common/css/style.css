@@ -680,3 +680,9 @@
     width: 35%;
     border: 1px solid #dddbdb;
 }
+
+.successNote {
+    text-align: center;
+    font-size: 20px;
+    color: #ed2e2e;
+}
