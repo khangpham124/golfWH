@@ -19,6 +19,7 @@ include(APP_PATH."libs/head.php");
 		<li><a href=""><img src="<?php echo APP_URL; ?>img/top/bnr_1.jpg" class="imgMax" alt=""></a></li>
 		<li><a href=""><img src="<?php echo APP_URL; ?>img/top/bnr_2.jpg" class="imgMax" alt=""></a></li>
 		<li><a href=""><img src="<?php echo APP_URL; ?>img/top/bnr_3.jpg" class="imgMax" alt=""></a></li>
+		<li><a href=""><img src="<?php echo APP_URL; ?>img/top/bnr_4.jpg" class="imgMax" alt=""></a></li>
 	</ul>
 </div>
 

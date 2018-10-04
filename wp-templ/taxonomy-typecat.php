@@ -56,12 +56,16 @@ include(APP_PATH."libs/head.php");
 				<li>
 					<div class="wrap">
 						<p class="thumb"><a href="<?php the_permalink(); ?>"><img src="<?php echo thumbCrop($thumb_img[0],230,230); ?>" class="" alt=""></a></p>
-						<p class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-						<p class="price <?php echo $classSale; ?>"><?php echo number_format($price_real); ?> VND 
-						<?php if($sale_stt!='') { ?>
-						<span>-<?php echo get_field('cf_cost') ?>%</span>
+						<p class="title matchHeight"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+						<?php if($price_real!='') { ?>
+							<p class="price <?php echo $classSale; ?>"><?php echo number_format($price_real); ?> VND 
+							<?php if($sale_stt!='') { ?>
+							<span>-<?php echo get_field('cf_cost') ?>%</span>
+							<?php } ?>
+							</p>
+						<?php } else { ?>
+							<p class="price"><a href="tel:<?php echo $hotline; ?>" class=""><i class="fa fa-phone" aria-hidden="true"></i></a></p>
 						<?php } ?>
-						</p>
 						<?php if($sale_stt!='') { ?>
 						<p class="priceOff"><?php echo number_format($price); ?> VND</p>
 						<?php } ?>

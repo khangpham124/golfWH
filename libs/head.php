@@ -28,11 +28,10 @@
 <!--facebook-->
 <meta property="og:title" content="<?php echo $titlepage; ?>">
 <meta property="og:type" content="website">
-<meta property="og:url" content="<?php echo 'http://';echo $_SERVER["SERVER_NAME"];echo $_SERVER["SCRIPT_NAME"];echo $_SERVER["QUERY_STRING"]; ?>">
-<meta property="og:image" content="<?php echo APP_URL; ?>common/img/other/fb_image.jpg">
-<meta property="og:site_name" content="">
+<meta property="og:url" content="<?php echo $_SERVER['REQUEST_URI']; ?>">
+<meta property="og:image" content="<?php echo $fb_img; ?>">
+<meta property="og:site_name" content="Golf Warehouse">
 <meta property="og:description" content="<?php echo $desPage; ?>">
-<meta property="fb:app_id" content="">
 <!--/facebook-->
 
 <!--css-->

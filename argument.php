@@ -5,4 +5,6 @@ $hotline = '0938-813-271';
 $address = '28A, đường số 12, kp2, P.Hiệp bình chánh, quận Thủ Đức, TpHCM';
 $hours = ' 8:00AM- 18:00 PM';
 
+if(!isset($fb_img)) { $fb_img = APP_URL.'common/img/other/fb_image.jpg'; }
+
 ?>

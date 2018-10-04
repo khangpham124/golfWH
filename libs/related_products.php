@@ -28,13 +28,16 @@
                 <?php if($thumb_img[0]) { ?>
                 <p class="thumb"><img src="<?php echo thumbCrop($thumb_img[0],300,300); ?>" class="" alt=""></p>
                 <?php } ?>
-                <p class="title"><a href=""><?php the_title(); ?></a></p>
-        <p class="price <?php echo $classSale; ?>">
-            <em><?php echo number_format($price_real); ?> VND</em>
-            <?php if($sale_stt!='') { ?>
-            <span>-<?php echo get_field('cf_cost') ?>%</span>
-            <?php } ?>
-        </p>
+                <p class="title matchHeight"><a href=""><?php the_title(); ?></a></p>
+                <?php if($price_real!='') { ?>
+                    <p class="price <?php echo $classSale; ?>"><?php echo number_format($price_real); ?> VND 
+                    <?php if($sale_stt!='') { ?>
+                    <span>-<?php echo get_field('cf_cost') ?>%</span>
+                    <?php } ?>
+                    </p>
+                <?php } else { ?>
+                    <p class="price"><a href="tel:<?php echo $hotline; ?>" class=""><i class="fa fa-phone" aria-hidden="true"></i></a></p>
+                <?php } ?>
         <?php if($sale_stt!='') { ?>
         <p class="priceOff"><?php echo number_format($price); ?> VND</p>
         <?php } ?>

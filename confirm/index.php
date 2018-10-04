@@ -96,6 +96,7 @@ include "class.smtp.php";
 		$from = "order.gwh@gmail.com";
 
 		$to_admin = "khangpham421@gmail.com";
+		$to_gw = "tnlogistics2015@gmail.com";
 		$to_customer = $email;
 
 		$name="GOLF-WAREHOUSE ORDER";
@@ -103,6 +104,7 @@ include "class.smtp.php";
 		$mail->From = $from;
 		$mail->FromName = "GOLF-WAREHOUSE ORDER SYSTEM";
 		$mail->AddAddress($to_admin,$name);
+		$mail->AddAddress($to_gw,$name);
 		$mail->AddAddress($to_customer,$name);
 
 		//$mail->AddReplyTo($from,"khang test");

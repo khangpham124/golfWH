@@ -4,7 +4,7 @@
       <div class="logoFoot"><img src="<?php echo APP_URL ?>common/img/header/logo.svg" class="">
         <h3 class="h3_foot h3_foot--small">Follow Us</h3>
         <ul class="iconSocial">
-          <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.facebook.com/GOLFwarehousevn-%C4%90%E1%BB%93-G%C3%B4n-ch%C3%ADnh-h%C3%A3ng-gi%C3%A1-s%E1%BB%89-1705207316241181/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
           <li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
         </ul>
       </div>

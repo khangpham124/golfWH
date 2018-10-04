@@ -1,5 +1,12 @@
 <!--Google Tag Manager-->
-	
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <!--End Google Tag Manager-->
 
 <header id="header">
@@ -46,7 +53,7 @@
     <ul class="gNavi flexBox flexBox--center flexBox--arround">
         <li><a href="<?php echo APP_URL; ?>new-arrival/">NEW ARRIVAL</a></li>
         <li><a href="<?php echo APP_URL; ?>sale/">SALE</a></li>
-        <li><a href="<?php echo APP_URL; ?>clubs/">GOLF CLUBS </a>
+        <li><a href="<?php echo APP_URL; ?>clubs/">CLUBS </a>
             <div class="wrapList">
                 <ul class="subNavi flexBox flexBox--center flexBox--wrap">
                     <?php
@@ -78,7 +85,7 @@
                 </ul>
             </div>
         </li>
-        <li><a href="<?php echo APP_URL; ?>bag">GOLF BAGS </a>
+        <li><a href="<?php echo APP_URL; ?>bag">BAGS </a>
             <div class="wrapList">
                 <ul class="subNavi flexBox flexBox--center flexBox--wrap">
                     <?php
@@ -110,7 +117,7 @@
                 </ul>
             </div>
         </li>
-        <li><a href="<?php echo APP_URL; ?>shoes/">GOLF SHOES</a>
+        <li><a href="<?php echo APP_URL; ?>shoes/">SHOES</a>
             <div class="wrapList">
                 <ul class="subNavi flexBox flexBox--center flexBox--wrap">
                     <?php
@@ -174,7 +181,7 @@
                 </ul>
             </div>
         </li>
-        <li><a href="<?php echo APP_URL; ?>accessories/">ACCESSORIES </a>
+        <li><a href="<?php echo APP_URL; ?>accessories/">ACCESSORIES</a>
             <div class="wrapList">
                 <ul class="subNavi flexBox flexBox--center flexBox--wrap">
                     <?php
@@ -206,7 +213,7 @@
                 </ul>
             </div>
         </li>
-        <li><a href="<?php echo APP_URL; ?>brand/">SHOP BY BRAND </a></li>
+        <li><a href="<?php echo APP_URL; ?>used/">USED</a></li>
         <li><a href="<?php echo APP_URL; ?>event">EVENT</a></li>
         
     </ul>
