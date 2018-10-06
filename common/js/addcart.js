@@ -16,7 +16,7 @@ $(".addToCard").live('click', function() {
                 $('.sizePart').addClass('notice');
             }
         }
-        if ($(".sizeChose").length > 0) {
+        if (($(".sizeChose").length > 0) && (!$("input[name=sizeChose]").is(':checked'))) {
             if (!$("input[name=sizeChose]").is(':checked')) {
                 alert('Please chose SIZE');
                 $('.sizePart').addClass('notice');

@@ -9,20 +9,20 @@ if (start) {
 /* add Item to cart */
 $(".addToCart-clubs").click(function() {
     if ((!$("input[name=shaftChose]").is(':checked')) || (!$("input[name=flexChose]").is(':checked')) || (!$("input[name=loftChose]").is(':checked'))) {
-        if (($(".shaftChose").length > 0) && (!$("input[name=colorChose]").is(':checked'))) {
+        if (($(".shaftChose").length > 0) && (!$("input[name=shaftChose]").is(':checked'))) {
             if (!$("input[name=shaftChose]").is(':checked')) {
                 alert('Please chose SHAFT');
                 $('.shaftPart').addClass('notice');
             }
         }
-        if ($(".flexChose").length > 0) {
+        if (($(".flexChose").length > 0) && (!$("input[name=flexChose]").is(':checked'))) {
             if (!$("input[name=flexChose]").is(':checked')) {
                 alert('Please chose FLEX');
                 $('.flexPart').addClass('notice');
             }
         }
 
-        if ($(".loftChose").length > 0) {
+        if (($(".loftChose").length > 0) && (!$("input[name=loftChose]").is(':checked'))) {
             if (!$("input[name=loftChose]").is(':checked')) {
                 alert('Please chose LOFT');
                 $('.sizePart').addClass('notice');

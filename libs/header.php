@@ -17,11 +17,11 @@ fjs.parentNode.insertBefore(js, fjs);
             <li><i class="fa fa-clock-o" aria-hidden="true"></i><?php echo $hours; ?></li>
         </ul>
         <div class="right flexBox flexBox--center flexBox--between">
-            <ul class="langBar">
+            <!-- <ul class="langBar">
                 <li><a href="">VIET</a></li>
                 <li class="active"><a href="">ENG</a></li>
                 <li><a href="">日本語</a></li>
-            </ul>
+            </ul> -->
             <a href="<?php echo APP_URL; ?>cart/" class="linkCart"><i class="fa fa-shopping-bag" aria-hidden="true"></i>(<span class="numbCart">0</span>)</a>
         </div>
         </div>

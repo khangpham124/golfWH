@@ -544,6 +544,12 @@
     background: transparent;
 }
 
+#checkout .formInput .btnSite {
+    width: 50%;
+    margin: 0;
+    height: auto;
+}
+
 .btnSite i {
     margin-right: 10px;
 }
@@ -551,6 +557,7 @@
 .btnSite--blue {
     background: #12294b;
     color: #fff !important;
+    width: 50% !important;
 }
 
 .btnSite--orange {
@@ -742,4 +749,35 @@
 
 .boxShared {
     margin-top: 25px;
+}
+
+.notice {
+    border: #ed2e2e;
+}
+
+#about .mainImg {
+    max-height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+#about .mainImg::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .4);
+}
+
+#about .mainImg img {
+    width: 100%;
+}
+
+.mainText {
+    line-height: 1.7;
+}
+
+.mainText img {
+    display: block;
+    margin: 25px auto;
 }

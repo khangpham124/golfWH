@@ -1,27 +1,26 @@
 <!-- <p id="pageTop"><img src="<?php echo APP_URL; ?>common/img/footer/totop.svg" class="" alt=""></p> -->
 <footer id="footer">
     <div class="inner flexBox flexBox--wrap flexBox--between">
-      <div class="logoFoot"><img src="<?php echo APP_URL ?>common/img/header/logo.svg" class="">
-        <h3 class="h3_foot h3_foot--small">Follow Us</h3>
+      <div class="logoFoot">
+        <img src="<?php echo APP_URL ?>common/img/header/logo.svg" class="">
+        <p class="copyright">© 2018 <span>Golf-Warehouse.vn</span>All Rights Reserved</p>   
+      </div>
+      <div class="colFoot footerInfo">
+        <p><i class="fa fa-map-marker" aria-hidden="true"></i><?php echo $address; ?></p>
+        <p><i class="fa fa-clock-o" aria-hidden="true"></i><?php echo $hours; ?></p>
+        <p><i class="fa fa-phone-square" aria-hidden="true"></i><?php echo $hotline; ?></p>
+        <ul class="lstInfo flexBox flexBox--start">
+          <li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i><a href="<?php echo APP_URL; ?>about/">About</a></li>
+          <li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i><a href="<?php echo APP_URL; ?>info/">Shipping Info</a></li>
+        </ul>
+        <h3 class="h3_foot h3_foot--small followText">Follow Us</h3>
         <ul class="iconSocial">
           <li><a href="https://www.facebook.com/GOLFwarehousevn-%C4%90%E1%BB%93-G%C3%B4n-ch%C3%ADnh-h%C3%A3ng-gi%C3%A1-s%E1%BB%89-1705207316241181/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
           <li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
         </ul>
       </div>
-      <div class="flexBox flexBox--wrap flexBox--between rightFoot">
-        <div class="colFoot">
-        
-        </div>
-        <div class="colFoot">
-          <!-- <h3 class="h3_foot">Info</h3>
-          <ul class="lstInfo">
-            <li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i><a href="">About</a></li>
-            <li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i><a href="">Contact</a></li>
-            <li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i><a href="">Shipping Info</a></li>
-            <li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i><a href="">Faqs</a></li>
-          </ul> -->
-          <p class="copyright">© 2018 <span>Golf-Warehouse.vn</span>All Rights Reserved</p>   
-        </div>
+      <div class="colFoot">
+        <div class="fb-page" data-href="https://web.facebook.com/GOLFwarehousevn-%C4%90%E1%BB%93-G%C3%B4n-ch%C3%ADnh-h%C3%A3ng-gi%C3%A1-s%E1%BB%89-1705207316241181/?_rdc=1&amp;_rdr" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://web.facebook.com/GOLFwarehousevn-%C4%90%E1%BB%93-G%C3%B4n-ch%C3%ADnh-h%C3%A3ng-gi%C3%A1-s%E1%BB%89-1705207316241181/?_rdc=1&amp;_rdr" class="fb-xfbml-parse-ignore"><a href="https://web.facebook.com/GOLFwarehousevn-%C4%90%E1%BB%93-G%C3%B4n-ch%C3%ADnh-h%C3%A3ng-gi%C3%A1-s%E1%BB%89-1705207316241181/?_rdc=1&amp;_rdr">GOLFwarehouse.vn - Đồ Gôn chính hãng giá sỉ</a></blockquote></div>
       </div>
     </div>
 </footer>
