@@ -10,15 +10,18 @@ if (start) {
 /* add Item to cart */
 $(".addToCard").live('click', function() {
     if ((!$("input[name=colorChose]").is(':checked')) || (!$("input[name=sizeChose]").is(':checked'))) {
-        if (!$("input[name=colorChose]").is(':checked')) {
-            alert('Please chose color');
-            $('.colorPart').addClass('notice');
+        if (($(".colorChose").length > 0) && (!$("input[name=colorChose]").is(':checked'))) {
+            if (!$("input[name=colorChose]").is(':checked')) {
+                alert('Please chose COLOR');
+                $('.sizePart').addClass('notice');
+            }
         }
-        if (!$("input[name=sizeChose]").is(':checked')) {
-            alert('Please chose size');
-            $('.sizePart').addClass('notice');
+        if ($(".sizeChose").length > 0) {
+            if (!$("input[name=sizeChose]").is(':checked')) {
+                alert('Please chose SIZE');
+                $('.sizePart').addClass('notice');
+            }
         }
-    } else {
         var isThis = $(this);
         var id_pro = isThis.attr('data-id');
         var sku = isThis.attr('data-sku');
