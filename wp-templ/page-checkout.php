@@ -10,7 +10,7 @@ include(APP_PATH."libs/head.php");
 <link rel="stylesheet" href="<?php echo APP_URL;?>common/css/slick.css">
 </head>
 
-<body id="category">
+<body id="checkout">
 <!--===================================================-->
 <div id="wrapper">
 <!--===================================================-->
@@ -36,27 +36,27 @@ include(APP_PATH."libs/head.php");
 				<table class="shipInfo">
 					<tr>
 						<th><label>Fullname</label></th>
-						<td><input type="text" id="fullname" name="fullname"></td>
+						<td><input type="text" id="fullname" name="fullname" require></td>
 					</tr>
 
 					<tr>
 						<th><label>Email</label></th>
-						<td><input type="text" id="email" name="email"></td>
+						<td><input type="text" id="email" name="email" require></td>
 					</tr>
 
 					<tr>
 						<th><label>Phone</label></th>
-						<td><input type="text" id="phone" name="phone"></td>
+						<td><input type="text" id="phone" name="phone" require></td>
 					</tr>
 
 					<tr>
 						<th><label>Address</label></th>
-						<td><input type="text" id="address" name="address"></td>
+						<td><input type="text" id="address" name="address" require></td>
 					</tr>
 				</table>
-				<div class="boxBtn flexBox">
+				<div class="boxBtn flexBox flexBox--wrap flexBox--stretch">
 					<a href="<?php echo APP_URL; ?>cart" class="btnSite"><i class="fa fa-arrow-left" aria-hidden="true"></i>BACK</a>
-					<input type="submit" class="btnSite btnSite--blue" value="COMPLETE">
+					<input type="submit" class="btnSite btnSite--blue completeBtn" value="COMPLETE">
 				</div>
 			</form>
 		</div>
@@ -146,6 +146,12 @@ include(APP_PATH."libs/head.php");
 <!--/Footer-->
 <!--===================================================-->
 </div>
+<script>
+$(".completeBtn").click(function() {
+	$(this).addClass('disable');
+});
+</script>
+
 <!--/wrapper-->
 <!--===================================================-->
 </body>

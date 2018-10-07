@@ -133,7 +133,7 @@ include(APP_PATH."libs/head.php");
 
 	<h2 class="h2_page h2_page--grey">AUTHORIZED DEALER<br class="sp">
 	OF THE BEST BRANDS</h2>
-	<ul class="lstLogo">
+	<ul class="lstLogo flexBox flexBox--center flexBox--spacce-center">
 		<?php
 				$wp_query = new WP_Query();
 				$param = array (
@@ -239,45 +239,6 @@ $('#slideNew').slick({
     }
   ]
 });
-
-$('.lstLogo').slick({
-  dots: false,
-  infinite: true,
-  speed: 800,
-  autoplay: true,
-  autoplaySpeed: 2500,
-  arrows: false,
-  slidesToShow: 6,
-  slidesToScroll: 1,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: false
-      }
-    },
-    {
-      breakpoint: 767,
-      settings: {
-				arrows: false,
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-				arrows: false,
-        slidesToScroll: 1
-      }
-    }
-  ]
-});
-
 </script>
 </body>
 </html>	

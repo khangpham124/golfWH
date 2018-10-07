@@ -1,4 +1,4 @@
-<?php /* Template Name: New Arrival */ ?>
+<?php /* Template Name: Used */ ?>
 <?php
 include($_SERVER["DOCUMENT_ROOT"] . "/app_config.php");
 include(APP_PATH."libs/head.php"); 
@@ -18,12 +18,11 @@ include(APP_PATH."libs/head.php");
 <div class="maxW">
 	<ul class="break clearfix">
 		<li><a href="<?php echo APP_URL; ?>">Home</a></li>
-		<li>New Arrival</li>
+		<li>Used</li>
 	</ul>
 	
-	<ul class="lstProTop lstProTop--noSlide flexBox flexBox--top flexBox--start flexBox--wrap listCate">
-	<?php 
-		$wp_query = new WP_Query();
+    <?php
+        $wp_query = new WP_Query();
 		$param = array (
 		'posts_per_page' => '12',
 		'post_type' => array('accessories','bag','shoes','clubs','apparel'),
@@ -32,12 +31,16 @@ include(APP_PATH."libs/head.php");
 		'meta_query' => array(
 			array(
 			'key' => 'cf_product_type',
-			'value' => 'new arrival',
+			'value' => 'used',
 			'compare' => 'LIKE'
 			))
 		);
 		$wp_query->query($param);
-		if($wp_query->have_posts()): while($wp_query->have_posts()) :$wp_query->the_post();
+        if($wp_query->have_posts()) {
+    ?>        
+	<ul class="lstProTop lstProTop--noSlide flexBox flexBox--top flexBox--start flexBox--wrap listCate">
+	<?php 
+		while($wp_query->have_posts()) :$wp_query->the_post();
 		$thumb_url = get_post_thumbnail_id($post->ID);
 		$thumb_img = wp_get_attachment_image_src($thumb_url,'full');
 		$sale_stt = get_field('sale');
@@ -66,8 +69,11 @@ include(APP_PATH."libs/head.php");
 				<a href="<?php the_permalink(); ?>" class="btn">VIEW MORE</a>
 			</div>
 		</li>
-	<?php endwhile;endif; ?>
+	<?php endwhile; ?>
 	</ul>
+    <?php } else { ?>
+        <p class="txtNotfound">OOPS! NOT ITEM </p>
+    <?php } ?>
 	<?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
 </div>	
 

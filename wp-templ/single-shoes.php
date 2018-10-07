@@ -23,7 +23,7 @@ include(APP_PATH."libs/head.php");
 	<div class="taR">
 		<ul class="break clearfix">
 			<li><a href="<?php echo APP_URL; ?>">Home</a></li>
-			<li><?php echo get_post_type(); ?></li>
+			<li><a href="<?php echo APP_URL; ?><?php echo get_post_type(); ?>"><?php echo get_post_type(); ?></a></li>
 			<li><?php the_title(); ?></li>
 		</ul>
 	</div>
@@ -91,7 +91,7 @@ include(APP_PATH."libs/head.php");
 						while(has_sub_field('cf_color')):
 						$c++;
 						?>
-						<p class="wrapRad wrapColor" style="background:<?php echo get_sub_field('color_code') ?>" data-color="chosecolor<?php echo $c; ?>"><input type="radio" name="colorChose" id="clchose" class="radChose" value="<?php echo get_sub_field('color_code') ?>"></p>
+						<p class="wrapRad wrapColor" style="background:<?php echo get_sub_field('color_code') ?>" data-color="chosecolor<?php echo $c; ?>"><input type="radio" name="colorChose" id="clchose" class="radChose colorChose" value="<?php echo get_sub_field('color_code') ?>"></p>
 						<?php endwhile; ?>
 					</div>
 					<p class="infoPro--label">Size</p>
@@ -106,7 +106,7 @@ include(APP_PATH."libs/head.php");
 							<?php
 								while(has_sub_field('size')):
 							?>
-							<p class="wrapRad <?php if(get_sub_field('quantity')==0) { ?>soldOut<?php } ?>"><input type="radio" name="sizeChose" id="sizeChose" class="radChose" value="<?php echo get_sub_field('cf_size') ?>"><?php echo get_sub_field('cf_size') ?></p>
+							<p class="wrapRad <?php if(get_sub_field('quantity')==0) { ?>soldOut<?php } ?>"><input type="radio" name="sizeChose" id="sizeChose" class="radChose sizeChose" value="<?php echo get_sub_field('cf_size') ?>"><?php echo get_sub_field('cf_size') ?></p>
 							<?php endwhile; ?>
 							</div>
 						</div>

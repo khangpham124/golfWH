@@ -22,7 +22,7 @@ include(APP_PATH."libs/head.php");
 <div class="maxW">
 	<div class="taR">
 		<ul class="break clearfix">
-			<li><a href="">Home</a></li>
+			<li><a href="<?php echo APP_URL; ?>">Home</a></li>
 			<li>Sale</li>
 		</ul>
 	</div>

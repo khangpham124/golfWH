@@ -69,7 +69,7 @@ function todo_restrict_manage_posts() {
         foreach ($filters as $tax_slug) {
             $tax_obj = get_taxonomy($tax_slug);
             wp_dropdown_categories(array(
-                'show_option_all' => __('カテゴリー '),
+                'show_option_all' => __('Category'),
                 'taxonomy' => $tax_slug,
                 'name' => $tax_obj->name,
                 'orderby' => 'term_order',
@@ -175,8 +175,8 @@ function create_apparelcat_taxonomy () {
 	'all_items' => __('apparelcat'),
 	'parent_item' => __( 'Parent Cat' ),
 	'parent_item_colon' => __( 'Parent Cat:' ),
-	'edit_item' => __('Cat記事を編集'),
-	'add_new_item' => __('Cat記事を書く'),
+	'edit_item' => __('Edit Item'),
+	'add_new_item' => __('Add new item'),
 	'menu_name' => __( 'Gender Category' ),
 	);
 	$args = array(
@@ -199,8 +199,8 @@ function create_typecat_taxonomy () {
 	'all_items' => __('typecat'),
 	'parent_item' => __( 'Parent Cat' ),
 	'parent_item_colon' => __( 'Parent Cat:' ),
-	'edit_item' => __('Cat記事を編集'),
-	'add_new_item' => __('Cat記事を書く'),
+	'edit_item' => __('Edit item'),
+	'add_new_item' => __('Add new item'),
 	'menu_name' => __( 'Type category' ),
 	);
 	$args = array(
@@ -353,8 +353,8 @@ function create_clubscat_taxonomy () {
 	'all_items' => __('clubscat'),
 	'parent_item' => __( 'Parent Cat' ),
 	'parent_item_colon' => __( 'Parent Cat:' ),
-	'edit_item' => __('Cat記事を編集'),
-	'add_new_item' => __('Cat記事を書く'),
+	'edit_item' => __('Edit item'),
+	'add_new_item' => __('Add new item'),
 	'menu_name' => __( 'categories' ),
 	);
 	$args = array(
@@ -410,8 +410,8 @@ function create_accessoriescat_taxonomy () {
 	'all_items' => __('accessoriescat'),
 	'parent_item' => __( 'Parent Cat' ),
 	'parent_item_colon' => __( 'Parent Cat:' ),
-	'edit_item' => __('Cat記事を編集'),
-	'add_new_item' => __('Cat記事を書く'),
+	'edit_item' => __('Edit item'),
+	'add_new_item' => __('Add new item'),
 	'menu_name' => __( 'categories' ),
 	);
 	$args = array(
@@ -467,8 +467,8 @@ function create_bagcat_taxonomy () {
 	'all_items' => __('bagcat'),
 	'parent_item' => __( 'Parent Cat' ),
 	'parent_item_colon' => __( 'Parent Cat:' ),
-	'edit_item' => __('Cat記事を編集'),
-	'add_new_item' => __('Cat記事を書く'),
+	'edit_item' => __('Edit item'),
+	'add_new_item' => __('Add new item'),
 	'menu_name' => __( 'categories' ),
 	);
 	$args = array(
@@ -524,8 +524,8 @@ function create_shoescat_taxonomy () {
 	'all_items' => __('shoescat'),
 	'parent_item' => __( 'Parent Cat' ),
 	'parent_item_colon' => __( 'Parent Cat:' ),
-	'edit_item' => __('Cat記事を編集'),
-	'add_new_item' => __('Cat記事を書く'),
+	'edit_item' => __('Edit item'),
+	'add_new_item' => __('Add new item'),
 	'menu_name' => __( 'categories' ),
 	);
 	$args = array(
@@ -549,8 +549,8 @@ function create_clubsgendercat_taxonomy () {
 	'all_items' => __('clubsgendercat'),
 	'parent_item' => __( 'Parent Cat' ),
 	'parent_item_colon' => __( 'Parent Cat:' ),
-	'edit_item' => __('Cat記事を編集'),
-	'add_new_item' => __('Cat記事を書く'),
+	'edit_item' => __('Edit item'),
+	'add_new_item' => __('Add new item'),
 	'menu_name' => __( 'Gender Category' ),
 	);
 	$args = array(

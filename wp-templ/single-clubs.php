@@ -23,7 +23,7 @@ include(APP_PATH."libs/head.php");
 	<div class="taR">
 		<ul class="break clearfix">
 			<li><a href="<?php echo APP_URL; ?>">Home</a></li>
-			<li><?php echo get_post_type(); ?></li>
+			<li><a href="<?php echo APP_URL; ?><?php echo get_post_type(); ?>"><?php echo get_post_type(); ?></a></li>
 			<li><?php the_title(); ?></li>
 		</ul>
 	</div>
@@ -97,7 +97,7 @@ include(APP_PATH."libs/head.php");
 						<p class="txtTech">Shaft</p>
 						<div class="sizePart choseWrap shaftPart">	
 							<?php while(has_sub_field('shaft')): ?>	
-							<p class="wrapRad <?php if($quan==0) { ?>soldOut<?php } ?>"><input type="radio" name="shaftChose" id="shaftChose" class="radChose" value="<?php echo get_sub_field('info') ?>"><?php echo get_sub_field('info') ?></p>	
+							<p class="wrapRad <?php if($quan==0) { ?>soldOut<?php } ?>"><input type="radio" name="shaftChose" id="shaftChose" class="radChose shaftChose" value="<?php echo get_sub_field('info') ?>"><?php echo get_sub_field('info') ?></p>	
 							<?php endwhile; ?>
 						</div>
 						<?php } ?>
@@ -105,7 +105,7 @@ include(APP_PATH."libs/head.php");
 						<p class="txtTech">Flex</p>
 						<div class="sizePart choseWrap flexPart">
 						<?php while(has_sub_field('flex')): ?>	
-						<p class="wrapRad <?php if($quan==0) { ?>soldOut<?php } ?>"><input type="radio" name="flexChose" id="flexChose" class="radChose" value="<?php echo get_sub_field('info') ?>"><?php echo get_sub_field('info') ?></p>		
+						<p class="wrapRad <?php if($quan==0) { ?>soldOut<?php } ?>"><input type="radio" name="flexChose" id="flexChose" class="radChose flexChose" value="<?php echo get_sub_field('info') ?>"><?php echo get_sub_field('info') ?></p>		
 						<?php endwhile; ?>
 						</div>
 						<?php } ?>
@@ -114,7 +114,7 @@ include(APP_PATH."libs/head.php");
 						<p class="txtTech">Loft</p>
 						<div class="sizePart choseWrap loftPart">
 						<?php while(has_sub_field('loft')): ?>	
-						<p class="wrapRad <?php if($quan==0) { ?>soldOut<?php } ?>"><input type="radio" name="loftChose" id="loftChose" class="radChose" value="<?php echo get_sub_field('info') ?>"><?php echo get_sub_field('info') ?></p>		
+						<p class="wrapRad <?php if($quan==0) { ?>soldOut<?php } ?>"><input type="radio" name="loftChose" id="loftChose" class="radChose loftChose" value="<?php echo get_sub_field('info') ?>"><?php echo get_sub_field('info') ?></p>		
 						<?php endwhile; ?>
 						</div>
 						<?php } ?>
