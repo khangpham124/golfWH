@@ -189,18 +189,19 @@ $(function(){
 	slidesToScroll: 1,
 	responsive: [
 		{
-		breakpoint: 1024,
+		breakpoint: 1130,
 		settings: {
 			slidesToShow: 3,
 			slidesToScroll: 1,
 			infinite: true,
+			arrows: false,
 			dots: false
 		}
 		},
 		{
-		breakpoint: 767,
+		breakpoint: 768,
 		settings: {
-					arrows: false,
+			arrows: false,
 			slidesToShow: 3,
 			slidesToScroll: 1
 		}

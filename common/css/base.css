@@ -45,6 +45,7 @@ clearfix
 
 .flexBox {
     display: flex;
+    display: -webkit-flex;
 }
 
 .flexBox--center {
@@ -342,7 +343,7 @@ Header
 
 .headBar {
     background: #4d4d4d;
-    padding: 5px 0;
+    padding: 5px 15px;
 }
 
 .headBar .inner {
@@ -414,9 +415,9 @@ Header
 }
 
 .headerInner {
-    max-width: 1100px;
+    max-width: 1130px;
     margin: 0 auto;
-    padding: 15px 0;
+    padding: 15px;
     background: #1f2730;
 }
 
@@ -493,6 +494,7 @@ Header
 .gNavi>li .subNavi li a {
     color: #ff5534;
     font-size: 13px;
+    font-family: 'Lalezar', cursive;
 }
 
 .gNavi>li>a {
@@ -1056,7 +1058,7 @@ Footer
 
 @media only screen and (min-width: 861px) and (max-width: 1072px) {
     .gNavi li a {
-        padding: 30px 10px;
+        padding: 20px 10px;
         font-size: 12px;
     }
     #logo img {

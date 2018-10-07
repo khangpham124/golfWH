@@ -16,7 +16,7 @@ include(APP_PATH."libs/head.php");
 
 <div id="sliderTop">
 	<ul class="slider">
-		<li><a href=""><img src="<?php echo APP_URL; ?>img/top/bnr_1.jpg" class="imgMax" alt=""></a></li>
+    <li><a href=""><img src="<?php echo APP_URL; ?>img/top/bnr_1.jpg" class="imgMax" alt=""></a></li>
 		<li><a href=""><img src="<?php echo APP_URL; ?>img/top/bnr_2.jpg" class="imgMax" alt=""></a></li>
 		<li><a href=""><img src="<?php echo APP_URL; ?>img/top/bnr_3.jpg" class="imgMax" alt=""></a></li>
 		<li><a href=""><img src="<?php echo APP_URL; ?>img/top/bnr_4.jpg" class="imgMax" alt=""></a></li>
@@ -75,9 +75,32 @@ include(APP_PATH."libs/head.php");
 	</ul>
 </div>	
 
+<?php
+if(get_field('list_banner',$top_image->ID)): 
+?>
 <div class="bannerImg">
-	<img src="<?php echo APP_URL; ?>img/top/banner.jpg" class="" alt="">
+	<ul class="listTopBnr clearfix">
+		<li>
+			<img src="<?php echo APP_URL; ?>img/top/bnr_used.jpg" alt="">
+				<div class="text">
+				<p>Used Items</p>
+				<a href="<?php echo APP_URL; ?>uesed/">Shop now</a>
+				</div>
+		</li>	
+		<?php 
+				while(has_sub_field('list_banner',$top_image->ID)):
+				$image = wp_get_attachment_image_src(get_sub_field('img'),'full');
+			?>
+			<li><img src="<?php echo $image[0]; ?>" alt="">
+				<div class="name">
+					<p><?php echo get_sub_field('name'); ?></p>
+					<a href="<?php echo get_sub_field('url'); ?>">Shop now</a>
+				</div>
+			</li>
+		<?php endwhile; ?>
+	</ul>
 </div>
+<?php endif; ?>
 
 <div class="maxW">
 	<h2 class="h2_page">TOP <span>SELLER</span></h2>
@@ -180,7 +203,7 @@ $('.slider').slick({
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
-        infinite: true,
+				infinite: true,
         dots: false
       }
     },
@@ -213,19 +236,21 @@ $('#slideNew').slick({
   slidesToScroll: 1,
   responsive: [
     {
-      breakpoint: 1024,
+      breakpoint: 1130,
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 3,
         slidesToScroll: 1,
-        infinite: true,
+				infinite: true,
+				arrows: false,
         dots: false
       }
     },
     {
-      breakpoint: 767,
+      breakpoint: 768,
       settings: {
 				arrows: false,
-        slidesToShow: 1,
+				slidesToShow: 3,
+				arrows: false,
         slidesToScroll: 1
       }
     },

@@ -35,23 +35,23 @@ include(APP_PATH."libs/head.php");
 			<form class="formInput" method="post" action="http://golf-warehouse.vn/confirm/">
 				<table class="shipInfo">
 					<tr>
-						<th><label>Fullname</label></th>
-						<td><input type="text" id="fullname" name="fullname" require></td>
+						<th><label>Fullname<span>*</span></label></th>
+						<td><input type="text" id="fullname" name="fullname" required></td>
 					</tr>
 
 					<tr>
-						<th><label>Email</label></th>
-						<td><input type="text" id="email" name="email" require></td>
+						<th><label>Email<span>*</span></label></th>
+						<td><input type="email" id="email" name="email" required></td>
 					</tr>
 
 					<tr>
-						<th><label>Phone</label></th>
-						<td><input type="text" id="phone" name="phone" require></td>
+						<th><label>Phone<span>*</span></label></th>
+						<td><input type="text" id="phone" name="phone" required></td>
 					</tr>
 
 					<tr>
-						<th><label>Address</label></th>
-						<td><input type="text" id="address" name="address" require></td>
+						<th><label>Address<span>*</span></label></th>
+						<td><input type="text" id="address" name="address" required></td>
 					</tr>
 				</table>
 				<div class="boxBtn flexBox flexBox--wrap flexBox--stretch">
@@ -148,7 +148,13 @@ include(APP_PATH."libs/head.php");
 </div>
 <script>
 $(".completeBtn").click(function() {
-	$(this).addClass('disable');
+	var fullname = $("input[name=fullname]").val();
+	var email = $("input[name=email]").val();
+	var phone = $("input[name=phone]").val();
+	var address = $("input[name=address]").val();
+	if((fullname!='')&&(email!='')&&(phone!='')&&(address!='')){
+		$(this).addClass('disable');
+	}	
 });
 </script>
 
