@@ -460,6 +460,10 @@ Header
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
 }
 
+.scroller .wrapList {
+    top: 188px;
+}
+
 .wrapList.hover {
     display: block;
 }
