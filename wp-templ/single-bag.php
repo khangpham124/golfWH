@@ -94,26 +94,30 @@ include(APP_PATH."libs/head.php");
 						<p class="wrapRad wrapColor" style="background:<?php echo get_sub_field('color_code') ?>" data-color="chosecolor<?php echo $c; ?>"><input type="radio" name="colorChose" id="clchose" class="radChose colorChose" value="<?php echo get_sub_field('color_code') ?>"></p>
 						<?php endwhile; ?>
 					</div>
-					<?php if(get_field('slide_img')):  ?>
+					
+					
+					<div class="sizePart choseWrap">
 						<p class="infoPro--label">Size</p>
-						<div class="sizePart choseWrap">
+						<?php
+						$z=0;
+						while(has_sub_field('cf_color')):
+						$z++;
+						if(get_sub_field('cf_size')!='') {
+						?>
+						<div class="sizeContent chosecolor<?php echo $z; ?>">
+							<div class="flexBox flexBox--wrap">
 							<?php
-							$z=0;
-							while(has_sub_field('cf_color')):
-								$z++;
+								while(has_sub_field('size')):
+								if(get_sub_field('cf_size')!='') {
 							?>
-							<div class="sizeContent chosecolor<?php echo $z; ?>">
-								<div class="flexBox flexBox--wrap">
-								<?php
-									while(has_sub_field('size')):
-								?>
-								<p class="wrapRad <?php if(get_sub_field('quantity')==0) { ?>soldOut<?php } ?>"><input type="radio" name="sizeChose" id="sizeChose" class="radChose sizeChose" value="<?php echo get_sub_field('cf_size') ?>"><?php echo get_sub_field('cf_size') ?></p>
-								<?php endwhile; ?>
-								</div>
+							<p class="wrapRad <?php if(get_sub_field('quantity')==0) { ?>soldOut<?php } ?>"><input type="radio" name="sizeChose" id="sizeChose" class="radChose sizeChose" value="<?php echo get_sub_field('cf_size') ?>"><?php echo get_sub_field('cf_size') ?></p>
+							<?php } endwhile; ?>
 							</div>
-							<?php endwhile; ?>	
 						</div>
-					<?php endif; ?>
+						<?php } endwhile; ?>	
+					</div>
+					
+
 					<?php include(APP_PATH."libs/boxShared.php"); ?>
 					<p class="infoPro--label">Quantity</p>
 					<div class="numbers-row clearfix">

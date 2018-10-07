@@ -99,6 +99,11 @@ $(window).resize(function() {
     $('.wrapList').css('top', h_main);
 });
 
+$(window).scroll(function() {
+    var h_main = $('#header').height();
+    $('.wrapList').css('top', h_main);
+});
+
 /*=====================================================
 meta: {
   title: "jquery-opacity-rollover.js",

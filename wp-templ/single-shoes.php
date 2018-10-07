@@ -105,9 +105,10 @@ include(APP_PATH."libs/head.php");
 							<div class="flexBox flexBox--wrap">
 							<?php
 								while(has_sub_field('size')):
+								if(get_sub_field('cf_size')!='') {
 							?>
 							<p class="wrapRad <?php if(get_sub_field('quantity')==0) { ?>soldOut<?php } ?>"><input type="radio" name="sizeChose" id="sizeChose" class="radChose sizeChose" value="<?php echo get_sub_field('cf_size') ?>"><?php echo get_sub_field('cf_size') ?></p>
-							<?php endwhile; ?>
+							<?php } endwhile; ?>
 							</div>
 						</div>
 						<?php endwhile; ?>	

@@ -85,19 +85,19 @@ include(APP_PATH."libs/head.php");
 									<td><span style="background:#<?php echo $mydata->color ?>"></span></td>
 								</tr>
 								<?php } ?>
-								<?php if($mydata->shaft!='undefined') { ?>
+								<?php if(($mydata->shaft!='')&&($mydata->shaft!='undefined')) { ?>
 								<tr>
 									<th>SHAFT</th>
 									<td><?php echo $mydata->shaft ?></td>
 								</tr>
 								<?php } ?>
-								<?php if($mydata->flex!='undefined') { ?>
+								<?php if(($mydata->flex!='')&&($mydata->flex!='undefined')) { ?>
 								<tr>
 									<th>FLEX</th>
 									<td><?php echo $mydata->flex ?></td>
 								</tr>
 								<?php } ?>
-								<?php if($mydata->loft!='undefined') { ?>
+								<?php if(($mydata->loft!='')&&($mydata->loft!='undefined')) { ?>
 								<tr>
 									<th>LOFT</th>
 									<td><?php echo $mydata->loft ?></td>
