@@ -85,19 +85,19 @@ include(APP_PATH."libs/head.php");
 									<td><span style="background:#<?php echo $mydata->color ?>"></span></td>
 								</tr>
 								<?php } ?>
-								<?php if(($mydata->shaft!='')&&($mydata->shaft!='undefined')) { ?>
+								<?php if(($mydata->shaft!='')&&($mydata->shaft!='null')) { ?>
 								<tr>
 									<th>SHAFT</th>
 									<td><?php echo $mydata->shaft ?></td>
 								</tr>
 								<?php } ?>
-								<?php if(($mydata->flex!='')&&($mydata->flex!='undefined')) { ?>
+								<?php if(($mydata->flex!='')&&($mydata->flex!='null')) { ?>
 								<tr>
 									<th>FLEX</th>
 									<td><?php echo $mydata->flex ?></td>
 								</tr>
 								<?php } ?>
-								<?php if(($mydata->loft!='')&&($mydata->loft!='undefined')) { ?>
+								<?php if(($mydata->loft!='')&&($mydata->loft!='null')) { ?>
 								<tr>
 									<th>LOFT</th>
 									<td><?php echo $mydata->loft ?></td>
@@ -141,6 +141,27 @@ include(APP_PATH."libs/head.php");
 							<th class="totalCost">TOTAL</th>
 							<td><?php echo number_format(array_sum($arr_price)); ?> Đ
 							<input type="hidden" value="<?php echo array_sum($arr_price) ?>">
+							</td>
+						</tr>
+						<?php if($onsale=='onsale') { ?>
+						<tr>
+							<th class="totalCost">SALE OFF</th>
+							<td><?php echo $count_prommo; ?>%</td>
+						</tr>	
+						<?php } ?>
+						<tr>
+							<th class="totalCost">GRAND TOTAL</th>
+							<td>
+								<?php $tt_grand = array_sum($arr_price); 
+								if($onsale=='onsale') {
+									$tt_promo = ($tt_grand * $count_prommo)/100;
+									$tt_grand__final = $tt_grand - $tt_promo;
+								} else {
+									$tt_grand__final = array_sum($arr_price);
+								}
+								echo number_format($tt_grand__final);
+								?> Đ
+							<input type="hidden" value="<?php echo array_sum($tt_grand__final) ?>">
 							</td>
 						</tr>
 					</table>

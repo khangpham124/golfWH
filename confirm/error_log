@@ -1,0 +1,6 @@
+[12-Oct-2018 18:02:35 Asia/Bangkok] PHP Notice:  Undefined index: order_cookies in /home/golf6443/public_html/confirm/index.php on line 4
+[12-Oct-2018 18:10:05 Asia/Bangkok] PHP Parse error:  syntax error, unexpected '{' in /home/golf6443/public_html/confirm/index.php on line 171
+[12-Oct-2018 18:10:45 Asia/Bangkok] PHP Parse error:  syntax error, unexpected '{' in /home/golf6443/public_html/confirm/index.php on line 172
+[12-Oct-2018 18:10:46 Asia/Bangkok] PHP Parse error:  syntax error, unexpected '{' in /home/golf6443/public_html/confirm/index.php on line 172
+[12-Oct-2018 18:10:47 Asia/Bangkok] PHP Parse error:  syntax error, unexpected '{' in /home/golf6443/public_html/confirm/index.php on line 172
+[12-Oct-2018 18:10:48 Asia/Bangkok] PHP Parse error:  syntax error, unexpected '{' in /home/golf6443/public_html/confirm/index.php on line 172

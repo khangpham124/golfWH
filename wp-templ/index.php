@@ -16,10 +16,10 @@ include(APP_PATH."libs/head.php");
 
 <div id="sliderTop">
 	<ul class="slider">
-    <li><a href=""><img src="<?php echo APP_URL; ?>img/top/bnr_1.jpg" class="imgMax" alt=""></a></li>
-		<li><a href=""><img src="<?php echo APP_URL; ?>img/top/bnr_2.jpg" class="imgMax" alt=""></a></li>
-		<li><a href=""><img src="<?php echo APP_URL; ?>img/top/bnr_3.jpg" class="imgMax" alt=""></a></li>
-		<li><a href=""><img src="<?php echo APP_URL; ?>img/top/bnr_4.jpg" class="imgMax" alt=""></a></li>
+    <li><img src="<?php echo APP_URL; ?>img/top/bnr_1.jpg" class="imgMax" alt=""></li>
+		<li><img src="<?php echo APP_URL; ?>img/top/bnr_2.jpg" class="imgMax" alt=""></li>
+		<li><img src="<?php echo APP_URL; ?>img/top/bnr_3.jpg" class="imgMax" alt=""></li>
+		<li><img src="<?php echo APP_URL; ?>img/top/bnr_4.jpg" class="imgMax" alt=""></li>
 	</ul>
 </div>
 
@@ -58,13 +58,17 @@ include(APP_PATH."libs/head.php");
 				?>
 				<li>
 					<div class="wrap">
-						<p class="thumb"><img src="<?php echo thumbCrop($thumb_img[0],230,230); ?>" class="" alt=""></p>
-						<p class="title"><a href=""><?php the_title(); ?></a></p>
-						<p class="price <?php echo $classSale; ?>"><?php echo number_format($price_real); ?> VND 
-						<?php if($sale_stt!='') { ?>
-						<span>-<?php echo get_field('cf_cost') ?>%</span>
+						<p class="thumb"><a href="<?php the_permalink(); ?>"><img src="<?php echo thumbCrop($thumb_img[0],230,230); ?>" class="" alt="<?php the_title(); ?>"></a></p>
+						<p class="title matchHeight"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+						<?php if($price_real!='') { ?>
+							<p class="price <?php echo $classSale; ?>"><?php echo number_format($price_real); ?> VND 
+							<?php if($sale_stt!='') { ?>
+							<span>-<?php echo get_field('cf_cost') ?>%</span>
+							<?php } ?>
+							</p>
+						<?php } else { ?>
+							<p class="price"><a href="tel:<?php echo $hotline; ?>" class=""><i class="fa fa-phone" aria-hidden="true"></i></a></p>
 						<?php } ?>
-						</p>
 						<?php if($sale_stt!='') { ?>
 						<p class="priceOff"><?php echo number_format($price); ?> VND</p>
 						<?php } ?>
@@ -84,7 +88,7 @@ if(get_field('list_banner',$top_image->ID)):
 			<img src="<?php echo APP_URL; ?>img/top/bnr_used.jpg" alt="">
 				<div class="text">
 				<p>Used Items</p>
-				<a href="<?php echo APP_URL; ?>uesed/">Shop now</a>
+				<a href="<?php echo APP_URL; ?>used/">Shop now</a>
 				</div>
 		</li>	
 		<?php 
@@ -137,14 +141,17 @@ if(get_field('list_banner',$top_image->ID)):
 				?>
 				<li>
 					<div class="wrap">
-						<p class="thumb"><img src="<?php echo thumbCrop($thumb_img[0],230,230); ?>" class="" alt=""></p>
-						<p class="title matchHeight"><a href=""><?php the_title(); ?></a></p>
-						<p class="price <?php echo $classSale; ?>">
-							<em><?php echo number_format($price_real); ?> VND </em>
+						<p class="thumb"><a href="<?php the_permalink(); ?>"><img src="<?php echo thumbCrop($thumb_img[0],230,230); ?>" class="" alt=""></a></p>
+						<p class="title matchHeight"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+						<?php if($price_real!='') { ?>
+							<p class="price <?php echo $classSale; ?>"><?php echo number_format($price_real); ?> VND 
 							<?php if($sale_stt!='') { ?>
 							<span>-<?php echo get_field('cf_cost') ?>%</span>
 							<?php } ?>
-						</p>
+							</p>
+						<?php } else { ?>
+							<p class="price"><a href="tel:<?php echo $hotline; ?>" class=""><i class="fa fa-phone" aria-hidden="true"></i></a></p>
+						<?php } ?>
 						<?php if($sale_stt!='') { ?>
 						<p class="priceOff"><?php echo number_format($price); ?> VND</p>
 						<?php } ?>

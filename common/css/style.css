@@ -84,6 +84,7 @@
 .lstProTop li {
     width: 33.33%;
     padding: 0 10px;
+    position: relative;
 }
 
 .lstProTop li .title {
@@ -102,14 +103,17 @@
 .lstProTop li .price.saleoff {
     text-decoration-line: line-through;
     color: #333;
-    font-size: 14px;
+    font-size: 13px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
 .lstProTop li .price a {
     display: inline-block;
     background: #ff5534;
     color: #fff;
-    width: 100%;
+    width: 50%;
     border-radius: 15px;
 }
 
@@ -131,6 +135,7 @@
     padding: 5px 10px;
     font-weight: 400;
     font-size: 14px;
+    margin-left: 10px;
 }
 
 .lstProTop li .priceOff {
@@ -274,11 +279,16 @@
 }
 
 .h2_cate {
+    font-family: 'Lalezar', cursive;
     border-bottom: 1px solid #e5e5e5;
     padding-bottom: 10px;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
     margin-bottom: 30px;
+}
+
+.contentDetail+.h2_cate {
+    margin-top: 30px;
 }
 
 .headSub {
@@ -525,6 +535,7 @@
     width: 20px;
     height: 20px;
     display: inline-block;
+    border: 1px solid #ed2e2e;
 }
 
 .lstCart li .name {
@@ -778,7 +789,22 @@
 }
 
 .mainText {
-    line-height: 1.7;
+    line-height: 2;
+}
+
+.textCheckout {
+    margin-top: 20px;
+}
+
+.textCheckout a {
+    font-weight: 700;
+    color: #ed2e2e;
+}
+
+.mainText h3 {
+    color: #ed2e2e;
+    font-weight: 700;
+    font-size: 20px;
 }
 
 .mainText img {
@@ -796,6 +822,10 @@
     float: left;
     width: 50%;
     font-family: 'Lalezar', cursive;
+}
+
+.listTopBnr li img {
+    width: 100%;
 }
 
 .listTopBnr li .text {
@@ -852,4 +882,19 @@
 
 .completeBtn {
     border: 2px solid #12294b !important;
+}
+
+.listCount {
+    margin-bottom: 30px;
+}
+
+.listCount li+li {
+    margin-left: 10px;
+}
+
+.listCount li a {
+    display: inline-block;
+    background: #dddbdb;
+    border-radius: 15px;
+    padding: 5px 20px;
 }

@@ -40,7 +40,6 @@ include "class.smtp.php";
 
 		$order_post = array(
 			'post_title'    => $order_code,
-			'post_content'    => $cmt_order,
 			'post_status'   => 'publish',
 			'post_type' => 'getorder'
 		);
@@ -52,7 +51,12 @@ include "class.smtp.php";
 		add_post_meta($pid, 'cf_grand_total', $grandTotal);
 		add_post_meta($pid, 'cf_order_status', 'in progress');
 
-
+		$time_now = time(date('m/d/Y h:i:s a', time()));
+		$time_sale = strtotime('31-12-2018');
+		if($time_now <= $time_sale) {
+			$onsale = 'onsale';
+			$count_prommo = 30;
+		}
 		//LIST PORDUCT
 		$f_isset = $_SERVER["DOCUMENT_ROOT"].'/ajax/tmp/'.$_COOKIE['order_gwh'].'.json';
 		$order_detail  = json_decode(file_get_contents($f_isset),true);
@@ -76,14 +80,25 @@ include "class.smtp.php";
 		add_post_meta($pid, $sub_field_name6, $order_detail[$i]['flex'], false);
 		add_post_meta($pid, $sub_field_name7, $order_detail[$i]['loft'], false);
 		add_post_meta($pid, $sub_field_name8, $order_detail[$i]['quantity'], false);
-
-		// $curr_count = get_field('cf_color',$order_detail[$i]['id']);
-		// var_dump($curr_count);
-		// echo $curr_count[$i]['color_code'];
-		// update_post_meta();
 		}
 
 		unlink($f_isset);
+
+		// if($order_detail[$i]['shaft']) {
+		// 	$flag_shaft = 1;
+		// } else {	
+		// 	$flag_shaft = 0;
+		// }
+		// if($order_detail[$i]['flex']) {
+		// 	$flag_flex = 1;
+		// } else {	
+		// 	$flag_flex = 0;
+		// }
+		// if($order_detail[$i]['loft']) {
+		// 	$flag_loft = 1;
+		// } else {	
+		// 	$flag_loft = 0;
+		// }
 
 		$mail = new PHPMailer();
 		$mail->IsSMTP();
@@ -96,7 +111,7 @@ include "class.smtp.php";
 		$from = "order.gwh@gmail.com";
 
 		$to_admin = "khangpham421@gmail.com";
-		$to_gw = "tnlogistics2015@gmail.com";
+		// $to_gw = "warehouse.golf2018@gmail.com";
 		$to_customer = $email;
 
 		$name="GOLF-WAREHOUSE ORDER";
@@ -104,7 +119,7 @@ include "class.smtp.php";
 		$mail->From = $from;
 		$mail->FromName = "GOLF-WAREHOUSE ORDER SYSTEM";
 		$mail->AddAddress($to_admin,$name);
-		$mail->AddAddress($to_gw,$name);
+		// $mail->AddAddress($to_gw,$name);
 		$mail->AddAddress($to_customer,$name);
 
 		//$mail->AddReplyTo($from,"khang test");
@@ -122,6 +137,7 @@ include "class.smtp.php";
 		<table style='border:1px solid #000;border-collapse: collapse;border-spacing: 0;'>
 			<tr style='font-weight:bold; padding:5px'>
 				<td style='border:1px solid #000;padding:5px;text-align:center'>PRODUCTS</td>
+				<td style='border:1px solid #000;padding:5px;text-align:center'>SKU</td>
 				<td style='border:1px solid #000;padding:5px;text-align:center'>PRICE</td>
 				<td style='border:1px solid #000;padding:5px;text-align:center'>DETAIL</td>
 				<td style='border:1px solid #000;padding:5px;text-align:center'>QTY</td>
@@ -133,6 +149,7 @@ include "class.smtp.php";
 		$msgBody .= "   
 			<tr>
 				<td style='border:1px solid #000;padding:5px'>".get_the_title($order_detail[$i]['id'])."</td>
+				<td style='border:1px solid #000;padding:5px'>".$order_detail[$i]['sku']."</td>
 				<td style='border:1px solid #000;padding:5px'>".number_format($order_detail[$i]['price'])."</td>
 				<td style='border:1px solid #000;padding:5px'>"
 				;	
@@ -143,20 +160,20 @@ include "class.smtp.php";
 				}
 				if($order_detail[$i]['color']!='') {
 					$msgBody .= "
-					<p style='width:20px;height:20px;background:#".$order_detail[$i]['color']."'></p>
+					<p style='border:1px solid #000;width:20px;height:20px;background:#".$order_detail[$i]['color']."'></p>
 				";
 				}
-				if($order_detail[$i]['shaft']!='undefined') { 
+				if(($order_detail[$i]['shaft']!='null')||($order_detail[$i]['shaft']!='undefined')) {
 					$msgBody .= "
 					<p>SHAFT:".$order_detail[$i]['shaft']."</p>
 					";
 				}
-				if($order_detail[$i]['flex']!='undefined') { 
+				if(($order_detail[$i]['flex']!='null')||($order_detail[$i]['flex']!='undefined')) {
 					$msgBody .= "
 					<p>FLEX:".$order_detail[$i]['flex']."</p>
 					";
 				}
-				if($order_detail[$i]['loft']!='undefined') { 
+				if(($order_detail[$i]['loft']!='null')||($order_detail[$i]['loft']!='undefined')) {
 					$msgBody .= "
 					<p>LOFT:".$order_detail[$i]['loft']."</p>
 					";
@@ -164,13 +181,20 @@ include "class.smtp.php";
 				$msgBody .= "
 				</td>
 					<td style='border:1px solid #000;padding:5px'>".$order_detail[$i]['quantity']."</td>    
-					<td style='border:1px solid #000;padding:5px'>".number_format($tt)."VND</td>
+					<td style='border:1px solid #000;padding:5px'><strong>".number_format($tt)."VND</strong></td>
 				</tr>
 				";
 		}
+		if($onsale=='onsale') {
+			$msgBody .= " 
+			<tr>
+				<td style='border:1px solid #000;padding:5px;text-align:right' colspan='6'>PROMOTION (GRANG OPENING): <strong>-30%</strong></td>
+			</tr>
+			";
+		}
 		$msgBody .= " 
 			<tr>
-				<td style='border:1px solid #000;padding:5px;text-align:right' colspan='6'>".number_format($grandTotal)." VND</td>
+				<td style='border:1px solid #000;padding:5px;text-align:right' colspan='6'>GRAND TOTAL:<strong>".number_format($grandTotal)." VND</strong></td>
 			</tr>
 		</table>
 		";

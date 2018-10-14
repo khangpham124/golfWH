@@ -15,6 +15,11 @@ $rand .= $seed[$k];
 //set the filename
 $filename = './tmp/gwh_order_'.$rand.'.json';
 //open or create the file
+
+if($_GET['shaft']==''){$shaft='null';}else {$shaft=$_GET['shaft'];}
+if($_GET['flex']==''){$flex='null';}else {$flex=$_GET['flex'];}    
+if($_GET['loft']==''){$loft='null';}else {$loft=$_GET['loft'];}
+
 if(!isset($_COOKIE['order_gwh'])) {
     $data =array (
         array(
@@ -24,9 +29,9 @@ if(!isset($_COOKIE['order_gwh'])) {
         "quantity"=>$_GET['qual'],
         "size"=>$_GET['size'],
         "color"=>$_GET['color'],
-        "shaft"=>$_GET['shaft'],
-        "flex"=>$_GET['flex'],
-        "loft"=>$_GET['loft'],
+        "shaft"=>$shaft,
+        "flex"=>$flex,
+        "loft"=>$loft,
         "price"=>$_GET['price'],
         "cost"=>$_GET['cost'],
         )
@@ -50,6 +55,11 @@ if(!isset($_COOKIE['order_gwh'])) {
     $f_isset = './tmp/'.$_COOKIE['order_gwh'].'.json';
     $formattedData_curr = file_get_contents($f_isset);
     $formattedData_get = json_decode($formattedData_curr,true);
+
+    if($_GET['shaft']==''){$shaft='null';}else {$shaft=$_GET['shaft'];}
+    if($_GET['flex']==''){$flex='null';}else {$flex=$_GET['flex'];}    
+    if($_GET['loft']==''){$loft='null';}else {$loft=$_GET['loft'];}
+
     $data =
     array(
         "id"=>$_GET['proid'],
@@ -59,9 +69,9 @@ if(!isset($_COOKIE['order_gwh'])) {
         "size"=>$_GET['size'],
         "price"=>$_GET['price'],
         "color"=>$_GET['color'],
-        "shaft"=>$_GET['shaft'],
-        "flex"=>$_GET['flex'],
-        "loft"=>$_GET['loft'],
+        "shaft"=>$shaft,
+        "flex"=>$flex,
+        "loft"=>$loft,
         "price"=>$_GET['price'],
         "cost"=>$_GET['cost'],
     );

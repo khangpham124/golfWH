@@ -54,11 +54,46 @@ include(APP_PATH."libs/head.php");
 						<td><input type="text" id="address" name="address" required></td>
 					</tr>
 				</table>
+				<h3 class="h3_checkout">PAYMENT INFO</h3>
+				<div class="textCheckout">
+				When you buy at Warehouse golf, you can completely safety about the quality of products. Shop is committed to all products are raw materials, quality, imported from the famous golf brands.
+				After we receive order via email, Warehouse Golf will confirm by phone and processing order. 
+				<br><br>
+				1. Cash on delivery: apply only for customer in HCMC (not include Cu Chi, Can Gio, Hoc Mon). 
+				<br>
+				You will pay cash for delivery staff. <br>
+				Delivery time: <strong>1-2</strong> days working time after confirm order. <br>
+				<br><br>	
+				2. Transfer via Bank: apply for customer NOT in HCMC: 
+				<table class="shipInfo">
+					<tr>
+						<th>ACB Bank</th>
+						<td>
+							ACB - CN Chợ Lớn<br>
+							Account holder: Nguyen Thi kim Ngan<br>
+							Account number: 22937649
+						</td>
+					</tr>
+					<tr>
+						<th>VCB Bank</th>
+						<td>
+							Vietcombank - CN HCM<br>
+							Account holder: Nguyen Thi kim Ngan<br>
+							Account number: 0181003384945
+						</td>
+					</tr>
+				</table>
+				Content transfer included: <strong>Your name, phone number. And notice us transfer confirmation.</strong> <br>
+				After receive we will confirm and send your order for shipping express, you will receive <strong>5-7</strong> days working time after order confirmed. 
+				<br>
+				<a href="<?php echo APP_URL; ?>info/">View more shipping info</a>
+				</div>
 				<div class="boxBtn flexBox flexBox--wrap flexBox--stretch">
 					<a href="<?php echo APP_URL; ?>cart" class="btnSite"><i class="fa fa-arrow-left" aria-hidden="true"></i>BACK</a>
 					<input type="submit" class="btnSite btnSite--blue completeBtn" value="COMPLETE">
 				</div>
 			</form>
+			
 		</div>
 		
 	</div>
@@ -74,12 +109,33 @@ include(APP_PATH."libs/head.php");
 							$count_price = ($mydata->quantity * $mydata->price);
 							$arr_price[] = $count_price;
 						}
-					$_SESSION['grandTotal'] = array_sum($arr_price);	
 					?>
 					<tr>
 						<th class="totalCost">TOTAL</th>
 						<td><?php echo number_format(array_sum($arr_price)); ?> Đ
 						<input type="hidden" value="<?php echo array_sum($arr_price) ?>">
+						</td>
+					</tr>
+					<?php if($onsale=='onsale') { ?>
+					<tr>
+						<th class="totalCost">SALE OFF</th>
+						<td><?php echo $count_prommo; ?>%</td>
+					</tr>	
+					<?php } ?>
+					<tr>
+						<th class="totalCost">GRAND TOTAL</th>
+						<td>
+							<?php $tt_grand = array_sum($arr_price); 
+							if($onsale=='onsale') {
+								$tt_promo = ($tt_grand * $count_prommo)/100;
+								$tt_grand__final = $tt_grand - $tt_promo;
+							} else {
+								$tt_grand__final = array_sum($arr_price);
+							}
+							echo number_format($tt_grand__final);
+							$_SESSION['grandTotal'] = $tt_grand__final;
+							?> Đ
+						<input type="hidden" value="<?php echo array_sum($tt_grand__final) ?>">
 						</td>
 					</tr>
 				</table>

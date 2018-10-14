@@ -70,10 +70,11 @@ include(APP_PATH."libs/head.php");
 						$price_real = get_field('cf_price');
 						$percent = (get_field('cf_cost') / 100);
 						if($sale_stt!='') {
-							$classSale = 'infoPro--saleoff';
-							$price = $price_real - ($price_real * $percent);
+						$classSale = 'saleoff';
+						$price = $price_real - ($price_real * $percent);
 						} else {
-							$price = get_field('cf_price');
+						$price = get_field('cf_price');
+						$classSale = '';
 						}
 					?>
 					<p class="infoPro--price <?php echo $classSale ?>"><?php echo number_format($price_real); ?> VND</p>
@@ -83,6 +84,7 @@ include(APP_PATH."libs/head.php");
 						<?php echo number_format($price); ?> VND</p>
 					<?php } ?>
 
+				
 					<p class="infoPro--sku">SKU Code : <?php echo get_field('cf_sku'); ?></p>
 					<p class="infoPro--label">Color</p>
 					<div class="colorPart choseWrap">
@@ -119,8 +121,13 @@ include(APP_PATH."libs/head.php");
 						<div class='inc button cal' rel='+' ><i class="fa fa-plus" aria-hidden="true"></i></div>
 						<div class='dec button cal' id='dec'><i class="fa fa-minus" aria-hidden="true"></i></div>
 						<input type="text" id="quantity" class="input_cal" readonly  value="1"> 
-                    </div>
-					<a href="javascript:void(0)" class="infoPro--btn addToCard" data-id="<?php echo $post->ID; ?>" data-price="<?php echo $price; ?>" data-title="<?php echo $post->post_title; ?>" data-sku="<?php echo get_field('cf_sku'); ?>">ADD TO CART</a>
+					</div>
+					
+					<?php if($price_real!='') { ?>
+						<a href="javascript:void(0)" class="infoPro--btn addToCard" data-id="<?php echo $post->ID; ?>" data-price="<?php echo $price; ?>" data-title="<?php echo $post->post_title; ?>" data-sku="<?php echo get_field('cf_sku'); ?>">ADD TO CART</a>
+					<?php } else { ?>
+						<a href="tel:<?php echo $hotline; ?>" class="infoPro--btn"><i class="fa fa-phone" aria-hidden="true"></i></a>
+					<?php } ?>
 				</div>
 			</div>
 

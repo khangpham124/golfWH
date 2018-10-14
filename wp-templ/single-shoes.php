@@ -120,7 +120,11 @@ include(APP_PATH."libs/head.php");
 						<div class='dec button cal' id='dec'><i class="fa fa-minus" aria-hidden="true"></i></div>
 						<input type="text" id="quantity" class="input_cal" readonly  value="1"> 
                     </div>
-					<a href="javascript:void(0)" class="infoPro--btn addToCard" data-id="<?php echo $post->ID; ?>" data-price="<?php echo $price; ?>" data-title="<?php echo $post->post_title; ?>" data-sku="<?php echo get_field('cf_sku'); ?>">ADD TO CART</a>
+					<?php if($price_real!='') { ?>
+						<a href="javascript:void(0)" class="infoPro--btn addToCard" data-id="<?php echo $post->ID; ?>" data-price="<?php echo $price; ?>" data-title="<?php echo $post->post_title; ?>" data-sku="<?php echo get_field('cf_sku'); ?>">ADD TO CART</a>
+					<?php } else { ?>
+						<a href="tel:<?php echo $hotline; ?>" class="infoPro--btn"><i class="fa fa-phone" aria-hidden="true"></i></a>
+					<?php } ?>
 				</div>
 			</div>
 
