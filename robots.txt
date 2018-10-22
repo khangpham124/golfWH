@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /wp-admin/
+Disallow: https://a2zservices.vn/why-chose-us.html
